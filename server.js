@@ -1,15 +1,5 @@
 'use strict';
 
-var AV = require('leanengine');
-
-AV.init({
-  appId: process.env.LEANCLOUD_APP_ID,
-  appKey: process.env.LEANCLOUD_APP_KEY,
-  masterKey: process.env.LEANCLOUD_APP_MASTER_KEY
-});
-
-// 如果不希望使用 masterKey 权限，可以将下面一行删除
-AV.Cloud.useMasterKey();
 
 var app = require('./app');
 
@@ -17,7 +7,7 @@ var app = require('./app');
 // LeanEngine 运行时会分配端口并赋值到该变量。
 var PORT = parseInt(process.env.LEANCLOUD_APP_PORT || process.env.PORT || 3000);
 
-app.listen(PORT, function (err) {
+app.listen(3000, function (err) {
   console.log('Node app is running on port:', PORT);
 
   // 注册全局未捕获异常处理器
